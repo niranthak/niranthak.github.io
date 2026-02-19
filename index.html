@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Niranthak 🔥</title>
+
   <style>
     body {
       margin: 0;
@@ -9,7 +10,7 @@
       color: white;
       font-family: Arial;
       text-align: center;
-      overflow: hidden;
+      overflow: auto; /* FIXED */
     }
 
     h1 {
@@ -24,6 +25,13 @@
       margin: auto;
       margin-top: 20px;
       color: #ccc;
+    }
+
+    #output {
+      margin-top: 30px;
+      font-family: monospace;
+      color: lime;
+      white-space: pre-line;
     }
 
     @keyframes glow {
@@ -50,6 +58,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <h1>(not) WELCOME TO MY DOMAIN 🔥</h1>
@@ -60,56 +69,55 @@
   </p>
 
   <button class="btn" onclick="startHack()">
-  Don't click me
-</button>
+    Don't click me
+  </button>
 
-<p id="output"></p>
+  <p id="output"></p>
 
-<script>
-const lines = [
-  "why did you click it...",
-  "YOU FOOL...",
-  "he'll dox yo--",
-  "Connection lost . . . . . . . . . . . . . . . ",
-  "connection back...",
-  "Connecting to server...",
-  "Bypassing firewall...",
-  "Access granted 😈",
-  "Fetching data...",
-  "IP: 127.0.0.1 (lol fake)",
-  "Location: Earth 🌍",
-  "Status: Skill issue detected 💀"
-];
+  <script>
+    const lines = [
+      "why did you click it...",
+      "YOU FOOL...",
+      "he'll dox yo--",
+      "Connection lost . . . . . . . . . . . . . . .",
+      "connection back...",
+      "Connecting to server...",
+      "Bypassing firewall...",
+      "Access granted 😈",
+      "Fetching data...",
+      "IP: 127.0.0.1 (lol fake)",
+      "Location: Earth 🌍",
+      "Status: Skill issue detected 💀"
+    ];
 
-let i = 0;
+    let i = 0;
 
-function startHack() {
-  i = 0;
-  document.getElementById("output").innerHTML = "";
-  typeLine();
-}
-
-function typeLine() {
-  if (i >= lines.length) return;
-
-  let line = lines[i];
-  let j = 0;
-  let p = document.getElementById("output");
-
-  let interval = setInterval(() => {
-    p.innerHTML += line[j];
-    j++;
-
-    if (j === line.length) {
-      clearInterval(interval);
-      p.innerHTML += "<br>";
-      i++;
-      setTimeout(typeLine, 500);
+    function startHack() {
+      i = 0;
+      document.getElementById("output").innerHTML = "";
+      typeLine();
     }
-  }, 40);
-}
-</script>
 
+    function typeLine() {
+      if (i >= lines.length) return;
+
+      let line = lines[i];
+      let j = 0;
+      let p = document.getElementById("output");
+
+      let interval = setInterval(() => {
+        p.innerHTML += line[j];
+        j++;
+
+        if (j === line.length) {
+          clearInterval(interval);
+          p.innerHTML += "<br>";
+          i++;
+          setTimeout(typeLine, 500);
+        }
+      }, 40);
+    }
+  </script>
 
 </body>
 </html>
